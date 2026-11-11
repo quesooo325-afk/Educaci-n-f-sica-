@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educación Física, Nutrición y Salud</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-600 text-white p-2 rounded-xl shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <span class="font-heading text-lg sm:text-xl font-extrabold tracking-tight text-slate-900">
+                        Vida<span class="text-brand-600">Activa</span>
+                    </span>
+                </div>
+
+                <nav class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+                    <a href="#educacion-fisica" class="hover:text-brand-600 transition-colors py-2">Educación Física</a>
+                    <a href="#nutricion" class="hover:text-brand-600 transition-colors py-2">Nutrición</a>
+                    <a href="#ejercicios" class="hover:text-brand-600 transition-colors py-2">Rutinas</a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-brand-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#educacion-fisica" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Educación Física</a>
+            <a href="#nutricion" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Nutrición</a>
+            <a href="#ejercicios" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Rutinas de Ejercicio</a>
+        </div>
+    </header>
+
+    <!-- HERO / PORTADA PRINCIPAL -->
+    <section class="relative min-h-[480px] sm:min-h-[560px] flex items-center justify-center overflow-hidden bg-slate-900">
+        <!-- Hero Background Image -->
+        <img 
+            src="https://images.unsplash.com/photo-1517649763962-0c623266010b?q=80&w=1600&auto=format&fit=crop" 
+            alt="Accesorios deportivos en el césped" 
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-40 scale-105 transition-transform duration-1000"
+            onerror="this.src='https://placehold.co/1600x900/166534/ffffff?text=Deportes+y+Salud'"
+        >
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 py-16">
+            <span class="inline-block bg-brand-500/20 text-brand-300 border border-brand-500/30 font-semibold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-widest mb-4">
+                Bienestar & Salud Integral
+            </span>
+            <h1 class="font-heading text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-6 drop-shadow-md">
+                Movimiento, Nutrición y Deporte
+            </h1>
+            <p class="text-slate-200 text-base sm:text-xl font-normal max-w-2xl mx-auto leading-relaxed mb-8">
+                Descubrí los fundamentos de la educación física, aprendé a nutrir tu cuerpo correctamente y comenzá tu rutina de ejercicios hoy mismo.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#educacion-fisica" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-7 py-3.5 rounded-2xl shadow-lg transition-all hover:scale-105">
+                    Empezar a Leer
+                </a>
+                <a href="#ejercicios" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-7 py-3.5 rounded-2xl backdrop-blur-sm transition-all hover:scale-105">
+                    Ver Rutinas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1: EDUCACIÓN FÍSICA -->
+    <section id="educacion-fisica" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <!-- Título Verde Destacado y Fuente Grande -->
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-brand-700 tracking-tight leading-tight mb-6">
+                    Antes de comenzar, ¿qué es la educación física y en qué te beneficia?
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                    La <strong class="text-slate-800">educación física</strong> es una disciplina pedagógica y formativa centrada en el movimiento del cuerpo, el desarrollo de habilidades motrices y la promoción de un estilo de vida activo y saludable. A través de deportes, juegos, ejercicios y actividades expresivas, busca el desarrollo integral de las personas en los aspectos físico, mental y social.
+                </p>
+            </div>
+
+            <!-- TABLA/CUADRO DE BENEFICIOS -->
+            <div class="mt-10 bg-slate-50 border border-slate-200 rounded-3xl p-4 sm:p-8 shadow-sm">
+                <h3 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 mb-6 text-center">
+                    Principales Beneficios por Área
+                </h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-brand-600 text-white">
+                                <th class="p-4 sm:p-5 rounded-tl-2xl font-heading text-sm sm:text-base font-bold uppercase tracking-wider w-1/3 sm:w-1/4">Área</th>
+                                <th class="p-4 sm:p-5 rounded-tr-2xl font-heading text-sm sm:text-base font-bold uppercase tracking-wider">Beneficios principales</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 bg-white">
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 sm:p-5 font-bold text-brand-800 align-top">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+                                        Salud Física
+                                    </div>
+                                </td>
+                                <td class="p-4 sm:p-5 text-slate-700 text-sm sm:text-base leading-relaxed">
+                                    Fortalece huesos y músculos, mejora la salud cardiovascular y ayuda a mantener un peso corporal saludable.
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 sm:p-5 font-bold text-brand-800 align-top">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                        Salud Mental
+                                    </div>
+                                </td>
+                                <td class="p-4 sm:p-5 text-slate-700 text-sm sm:text-base leading-relaxed">
+                                    Reduce el estrés y la ansiedad, mejora la concentración y estimula la liberación de endorfinas que elevan el estado de ánimo.
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 sm:p-5 font-bold text-brand-800 align-top">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
+                                        Desarrollo Cognitivo
+                                    </div>
+                                </td>
+                                <td class="p-4 sm:p-5 text-slate-700 text-sm sm:text-base leading-relaxed">
+                                    Estimula funciones cerebrales como la memoria, la toma rápida de decisiones y la coordinación motriz.
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 sm:p-5 font-bold text-brand-800 align-top">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                                        Habilidades Sociales
+                                    </div>
+                                </td>
+                                <td class="p-4 sm:p-5 text-slate-700 text-sm sm:text-base leading-relaxed">
+                                    Fomenta el trabajo en equipo, la empatía, el respeto por las reglas y el compañerismo.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: NUTRICIÓN -->
+    <section id="nutricion" class="py-16 sm:py-24 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-xs sm:text-sm">Alimentación Balanceada</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
+                    La Importancia de una Buena Nutrición
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                    La nutrición adecuada provee la energía y los nutrientes requeridos para que nuestro cuerpo funcione a su máximo rendimiento físico e intelectual. Combinar la actividad física con una dieta equilibrada garantiza un crecimiento y desarrollo saludable a cualquier edad.
+                </p>
+            </div>
+
+            <!-- Grilla Imagen del Plato Nutricional + Explicación -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+                <!-- Imagen del Plato -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 text-center flex flex-col items-center">
+                    <img 
+                        src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=800&auto=format&fit=crop" 
+                        alt="Plato de Alimentación Saludable" 
+                        class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-inner mb-4"
+                        onerror="this.src='https://placehold.co/600x600/dcfce7/166534?text=Plato+Nutricional'"
+                    >
+                    <p class="text-xs text-slate-500 font-medium">El plato del bien comer representa las proporciones ideales de cada grupo alimenticio.</p>
+                </div>
+
+                <!-- Resumen de Nutrición -->
+                <div class="space-y-4">
+                    <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-lg mb-1 text-brand-700">Verduras y Frutas</h4>
+                        <p class="text-slate-600 text-sm">Aportan vitaminas, minerales y fibra esencial para fortalecer defensas y digestión.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-lg mb-1 text-yellow-700">Cereales y Tubérculos</h4>
+                        <p class="text-slate-600 text-sm">Son la principal fuente de energía de rápida disposición para el cuerpo y cerebro.</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-lg mb-1 text-red-700">Leguminosas y Origen Animal</h4>
+                        <p class="text-slate-600 text-sm">Brindan proteínas clave para la regeneración celular y la construcción de tejidos musculares.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLA DE ALIMENTOS POR ESCRITO -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <h3 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 mb-6">
+                    Guía de Grupos de Alimentos
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="p-4 rounded-tl-xl font-bold text-sm">Grupo de Alimentos</th>
+                                <th class="p-4 font-bold text-sm">Ejemplos Principales</th>
+                                <th class="p-4 rounded-tr-xl font-bold text-sm">Recomendación</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm sm:text-base">
+                            <tr>
+                                <td class="p-4 font-semibold text-brand-700">Verduras y Frutas</td>
+                                <td class="p-4 text-slate-600">Espinacas, brócoli, manzanas, plátanos, zanahorias, tomates.</td>
+                                <td class="p-4 font-medium text-emerald-600">Consumir en abundancia (muchas).</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-yellow-700">Cereales e Integrales</td>
+                                <td class="p-4 text-slate-600">Avena, arroz integral, pan de grano entero, papa, pasta.</td>
+                                <td class="p-4 font-medium text-amber-600">Consumo suficiente y moderado.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-red-700">Leguminosas y Proteínas</td>
+                                <td class="p-4 text-slate-600">Lentejas, garbanzos, frijoles, pescado, pollo, huevos.</td>
+                                <td class="p-4 font-medium text-rose-600">Combinar y consumir porciones adecuadas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: EJERCICIOS QUE PODRIAS EMPEZAR A HACER -->
+    <section id="ejercicios" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-xs sm:text-sm">Guía Práctica</span>
+                <!-- Título principal solicitado -->
+                <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2">
+                    EJERCICIOS QUE PODRÍAS EMPEZAR A HACER
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg mt-4">
+                    Elegí el nivel de rutina que mejor se adapte a tu condición física actual y comenzá a moverte de forma segura.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- RUTINA PRINCIPIANTES -->
+                <div class="bg-emerald-50/60 border-2 border-emerald-200 rounded-3xl p-6 sm:p-8 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="bg-emerald-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full">Nivel 1</span>
+                            <span class="text-slate-500 text-xs font-semibold">3 Días a la semana</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Rutina para Principiantes</h3>
+                        <p class="text-slate-600 text-sm mb-6">Ideal si estás comenzando o volviendo al ejercicio tras un largo tiempo.</p>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-emerald-100">
+                                <span class="bg-emerald-100 text-emerald-800 p-1.5 rounded-lg font-bold text-xs">1</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Sentadillas Libres</h4>
+                                    <p class="text-slate-500 text-xs">3 series x 10 repeticiones</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-emerald-100">
+                                <span class="bg-emerald-100 text-emerald-800 p-1.5 rounded-lg font-bold text-xs">2</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Flexiones de Brazo (con rodillas apoyadas)</h4>
+                                    <p class="text-slate-500 text-xs">3 series x 8 repeticiones</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-emerald-100">
+                                <span class="bg-emerald-100 text-emerald-800 p-1.5 rounded-lg font-bold text-xs">3</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Plancha Abdominal Estática</h4>
+                                    <p class="text-slate-500 text-xs">3 series x 20 a 30 segundos</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-emerald-100">
+                                <span class="bg-emerald-100 text-emerald-800 p-1.5 rounded-lg font-bold text-xs">4</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Zancadas o Estocadas suaves</h4>
+                                    <p class="text-slate-500 text-xs">3 series x 8 repeticiones por pierna</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-emerald-200 text-xs text-slate-500">
+                        <strong>Consejo:</strong> Descansá entre 60 y 90 segundos entre cada serie.
+                    </div>
+                </div>
+
+                <!-- RUTINA AVANZADA -->
+                <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 relative flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="bg-brand-500 text-slate-900 font-bold text-xs uppercase px-3 py-1 rounded-full">Nivel 2</span>
+                            <span class="text-slate-400 text-xs font-semibold">4-5 Días a la semana</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2">Rutina Avanzada</h3>
+                        <p class="text-slate-300 text-sm mb-6">Diseñada para potenciar la fuerza, resistencia y dinamismo muscular.</p>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                                <span class="bg-brand-500 text-slate-950 p-1.5 rounded-lg font-bold text-xs">1</span>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Burpees Completos</h4>
+                                    <p class="text-slate-400 text-xs">4 series x 12 a 15 repeticiones</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                                <span class="bg-brand-500 text-slate-950 p-1.5 rounded-lg font-bold text-xs">2</span>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Sentadillas con Salto (Jump Squats)</h4>
+                                    <p class="text-slate-400 text-xs">4 series x 15 repeticiones</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                                <span class="bg-brand-500 text-slate-950 p-1.5 rounded-lg font-bold text-xs">3</span>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Flexiones Estrictas / Diamante</h4>
+                                    <p class="text-slate-400 text-xs">4 series x 15 repeticiones</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                                <span class="bg-brand-500 text-slate-950 p-1.5 rounded-lg font-bold text-xs">4</span>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Escaladores (Mountain Climbers)</h4>
+                                    <p class="text-slate-400 text-xs">4 series x 45 segundos continuos</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 text-xs text-slate-300">
+                        <strong>Consejo:</strong> Mantené descensos controlados de 45 segundos para maximizar intensidad.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 mt-auto">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-sm">© 2026 VidaActiva - Sitio Educativo sobre Educación Física y Salud.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JS for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
